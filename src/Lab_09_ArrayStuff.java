@@ -6,31 +6,34 @@ public class Lab_09_ArrayStuff {
         int[] dataPoints = new int[100];
         Random rand = new Random();
 
-        // Task 2: Initialize the array with random values between 1 and 100
+
+
         for (int i = 0; i < dataPoints.length; i++) {
             dataPoints[i] = rand.nextInt(100) + 1;
         }
 
-        // Task 3: Display the dataPoints values
+
+
         for (int value : dataPoints) {
             System.out.print(value + " | ");
         }
         System.out.println();
 
-        // Task 4: Calculate and display the sum and average of the values in dataPoints
+
+
         int sum = 0;
-        for (int value : dataPoints) {
-            sum += value;
-        }
+        for (int value : dataPoints) sum += value;
         double average = (double) sum / dataPoints.length;
         System.out.println("The sum of the random array dataPoints is: " + sum);
         System.out.println("The average of the random array dataPoints is: " + average);
 
-        // Task 5: Get a ranged int value from the user
+
+
         Scanner in = new Scanner(System.in);
         int userValue = SafeInput.getRangedInt(in, "Enter a value between 1 and 100", 1, 100);
 
-        // Task 6: Count occurrences of the user's value in the array
+
+
         int count = 0;
         for (int value : dataPoints) {
             if (value == userValue) {
@@ -39,7 +42,8 @@ public class Lab_09_ArrayStuff {
         }
         System.out.println("The value " + userValue + " was found " + count + " times in the array.");
 
-        // Task 7: Find the first occurrence of the user's value in the array
+
+
         boolean found = false;
         for (int i = 0; i < dataPoints.length; i++) {
             if (dataPoints[i] == userValue) {
@@ -52,7 +56,8 @@ public class Lab_09_ArrayStuff {
             System.out.println("The value " + userValue + " was not found in the array.");
         }
 
-        // Task 8: Find and display the minimum and maximum values in the array
+
+
         int min = dataPoints[0];
         int max = dataPoints[0];
         for (int value : dataPoints) {
@@ -66,7 +71,8 @@ public class Lab_09_ArrayStuff {
         System.out.println("The minimum value in the array is: " + min);
         System.out.println("The maximum value in the array is: " + max);
 
-        // Task 9: Display the average using the static method
+
+
         System.out.println("Average of dataPoints is: " + getAverage(dataPoints));
     }
 
@@ -95,7 +101,7 @@ class SafeInput {
                 }
             } else {
                 System.out.println("Error: Invalid input.");
-                pipe.next(); // clear invalid input
+                pipe.next();
             }
         } while (!valid);
 
